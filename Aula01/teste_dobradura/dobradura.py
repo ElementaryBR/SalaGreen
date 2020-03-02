@@ -26,7 +26,7 @@ class Dobradura:
 
 # if __name__ == '__main__':
 papel = Dobradura()
-print(papel.get_dobrar('5'))
+print(papel.get_dobrar(5))
 
 
 # 1 dobradura = 2

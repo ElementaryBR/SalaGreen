@@ -3,10 +3,14 @@
 # Crie um objeto que inicie com o volume do balde vazio.
 
 # O volume do balde deve ser o atributo privado __balde para o volume total do balde
+
 # O volume do balde deve ser o atributo privado __balde_atual para o volume atual do balde
+
 # Crie o metodo get_volume_balde() que mostre o volume do balde.
+
 # crie o metodo set_volume_balde(self,volume_balde) que receba como parametro um número inteiro,
 # positivo, dentro de 10 a 50.
+
 # Crie o metodo enchendo_balde(self,volume_agua) que deve receber um número inteiro,
 # positivo e retornar 'Vazio' se o balde não estiver cheio e True se o balde estiver
 # cheio e False se o balde estiver tranbordando. Se o metodo receber valores inválidos,
@@ -38,25 +42,33 @@ class Balde:
         return self.__balde
 
     def sorteio(self):
-        return randint(10,50)
+        volume_balde = randint(10,51)
+        return volume_balde
 
     def set_volume_balde(self, volume_balde):
-        self.__balde = self.sorteio()
-        self.__balde_atual = volume_balde
+        if volume_balde == str(volume_balde):
+            return False
+        if volume_balde == int(volume_balde):
+            if volume_balde < 10 or volume_balde > 50:
+                return False
+        self.__balde = volume_balde
+        return self.__balde
 
     def enchendo_balde(self, volume_agua):
-        try:
-            self.set_volume_balde(volume_agua)
-            if volume_agua == self.get_volume_balde():
-                return print('Cheio')
-            elif volume_agua < self.get_volume_balde():
-                print('Vazio')
-            elif volume_agua > self.get_volume_balde():
-                return print('Balde Transbordando')
-        except ValueError(volume_agua):
-            print('Digite apenas numeros positivos!')
-
+        if volume_agua != int(volume_agua):
+            return print('ValorError')
+        a = volume_agua
+        print(self.get_volume_balde())
+        while a == self.get_volume_balde():
+            self.__balde_atual = self.__balde_atual + a
+            print(self.__balde_atual)
+        if self.__balde_atual == self.get_volume_balde():
+            return True
+        if self.__balde_atual > self.get_volume_balde():
+            return False
+        if self.__balde_atual < self.get_volume_balde():
+            return print('Vazio')
 
 if __name__ == '__main__':
     teste = Balde()
-    teste.enchendo_balde(11)
+    teste.enchendo_balde(10)
