@@ -21,3 +21,21 @@
 
 
 # crite testes para validar cada uma destas classes!
+
+import math
+
+class Circulo:
+    def __init__(self):
+        self.cor = ''
+        self.raio = ''
+        self.material = ''
+
+    def trocaCor(self):
+        pass
+    def mostraCor(self):
+        pass
+    def area(self,raio):
+        result = (math.pi*raio**2)
+        return result
+class Quadrado:
+

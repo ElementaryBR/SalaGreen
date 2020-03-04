@@ -42,33 +42,36 @@ class Balde:
         return self.__balde
 
     def sorteio(self):
-        volume_balde = randint(10,51)
-        return volume_balde
+        self.__balde = randint(10,50)
+        return self.__balde_atual
 
     def set_volume_balde(self, volume_balde):
         if volume_balde == str(volume_balde):
             return False
-        if volume_balde == int(volume_balde):
+        elif volume_balde == int(volume_balde):
             if volume_balde < 10 or volume_balde > 50:
                 return False
         self.__balde = volume_balde
         return self.__balde
 
     def enchendo_balde(self, volume_agua):
-        if volume_agua != int(volume_agua):
-            return print('ValorError')
-        a = volume_agua
-        print(self.get_volume_balde())
-        while a == self.get_volume_balde():
-            self.__balde_atual = self.__balde_atual + a
-            print(self.__balde_atual)
-        if self.__balde_atual == self.get_volume_balde():
-            return True
-        if self.__balde_atual > self.get_volume_balde():
-            return False
-        if self.__balde_atual < self.get_volume_balde():
-            return print('Vazio')
+        if type(volume_agua) == int and volume_agua > 0:
+            self.__balde_atual += volume_agua
+            if self.__balde_atual < self.__balde:
+                return 'Vazio'
+            if self.__balde_atual == self.__balde:
+                return True
+            elif self.__balde_atual > self.__balde:
+                return False
+        else:
+            return 'ValorError'
+
+
+
+
+
+
 
 if __name__ == '__main__':
     teste = Balde()
-    teste.enchendo_balde(10)
+    teste.enchendo_balde()
