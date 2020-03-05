@@ -38,7 +38,7 @@ class Circulo:
         return self.__cor
 
     def lista_de_cores(self):
-        return ['Rosa','Amarelo','Preto','Vermelho','Azul','Verde','Cinza','Roxo','Prata','Branco','Prata','Dourado','Caramelo','Marfim','Marrom']
+        return ['Rosa','Amarelo','Preto','Vermelho','Azul','Verde','Cinza','Roxo','Prata','Branco','Prata','Dourado','Caramelo','Marfim','Marrom','Laranja']
 
     def setter_raio(self,raio):
         self.__raio = self.area(raio)
@@ -62,12 +62,11 @@ class Quadrado:
         return self.__tamanho_do_lado
 
     def mudar_tamanho(self,valor):
-        self.mudar_do_lado = valor
+         self.__tamanho_do_lado = valor
 
     def calcular(self):
-        self.resultado = self.mudar_do_lado * self.mudar_do_lado
-        self.mudar_tamanho(self.resultado)
-        return self.resultado
+        self.resultado = self.__tamanho_do_lado * self.__tamanho_do_lado
+        return self.mudar_tamanho(self.resultado)
 
 class Retangulo:
     def __init__(self):
@@ -84,15 +83,28 @@ class Retangulo:
         return f'A base tem valor de {base} e a altura tem valor de {altura}'
 
     def calculo_area(self):
-        result = self.__base * self.__altura
-        return result
+        self.result = self.__base * self.__altura
+        return self.result
 
 circulo = Circulo()
 quadrado = Quadrado()
 retangulo = Retangulo()
 
 
+
 circulo.trocaCor()
 print(circulo.getter_cor())
 circulo.setter_raio(5)
 print(f'{circulo.getter_raio():.2f}')
+
+
+quadrado.mudar_tamanho(5)
+print(quadrado.getter())
+quadrado.calcular()
+print(quadrado.getter())
+
+
+print(retangulo.getter())
+retangulo.setter_lados(10,2)
+print(retangulo.getter())
+print(retangulo.calculo_area())
