@@ -11,15 +11,15 @@ class Pessoa:
 
     def getter_nome(self):
         self.__nome = self.__nome
-        return print(self.__nome)
+        return self.__nome
 
     def getter_idade(self):
         self.__idade =self.__idade
-        return print(self.__idade)
+        return self.__idade
 
     def getter_sexo(self):
         self.__sexo = self.__sexo
-        return print(self.__sexo)
+        return self.__sexo
 
     def setter_nome(self,nome):
         self.__nome= nome
@@ -39,19 +39,19 @@ class Endereco:
 
     def getter_rua(self):
         self.__rua = self.__rua
-        return print(self.__rua)
+        return self.__rua
 
     def getter_cep(self):
         self.__cep =self.__cep
-        return print(self.__cep)
+        return self.__cep
 
     def getter_cidade(self):
         self.__cidade = self.__cidade
-        return print(self.__cidade)
+        return self.__cidade
 
     def getter_estado(self):
         self.__estado = self.__estado
-        return print(self.__estado)
+        return self.__estado
 
     def setter_rua(self,nome):
         self.__rua= nome
@@ -73,11 +73,11 @@ class Engenheiro(Pessoa):
 
     def getter_area(self):
         self.area = self.area
-        return print(self.area)
+        return self.area
 
     def getter_numero_rgs(self):
         self.numero_registro = self.numero_registro
-        return print(self.numero_registro)
+        return self.numero_registro
 
     def setter_area(self,area):
         self.area = area

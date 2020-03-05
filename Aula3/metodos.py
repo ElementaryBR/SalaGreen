@@ -18,3 +18,4 @@ frase1 = input('\nDigite uma palavra ou uma frase: ')
 frase2 = input('\nDigite mais uma palavra ou frase: ')
 
 print(concatenando(frase1,frase2))
+
